@@ -9,9 +9,8 @@ int main()
 {
 	VideoCapture capture(0);
 
-	capture.set(CAP_PROP_FRAME_WIDTH, 1280);
-	capture.set(CAP_PROP_FRAME_HEIGHT, 720);
-
+	//capture.set(CAP_PROP_FRAME_WIDTH, 1280);
+	//capture.set(CAP_PROP_FRAME_HEIGHT, 720);
 
 	if (!capture.isOpened())
 	{
@@ -31,15 +30,16 @@ int main()
 		
 		cvtColor(frame, framegray, COLOR_BGR2GRAY);
 
-		blur(framegray, framegray, Size(3, 3));
+		//blur(framegray, framegray, Size(3, 3));
+		GaussianBlur(framegray, framegray, Size(7, 7), 1.3, 1.3);
 
 		Canny(framegray, framemake, 30,90, 3);
 
-		//Mat element = getStructuringElement(MORPH_RECT, Size(2, 2));
+		Mat element = getStructuringElement(MORPH_RECT, Size(2, 2));
 
-		//morphologyEx(framemake, framemakewide, MORPH_DILATE, element);
+		morphologyEx(framemake, framemakewide, MORPH_DILATE, element);
 
-		bold(framemake, framemakewide);
+		//bold(framemake, framemakewide);
 
 		cvtColor(framemakewide, framemakewide, CV_GRAY2BGR);
 		addWeighted(frame, 1.0, framemakewide, 1.0, 0.0, framenew);
