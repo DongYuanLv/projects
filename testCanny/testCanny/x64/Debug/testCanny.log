@@ -1,0 +1,6 @@
+﻿  testCanny.cpp
+d:\visual studio 2010\testcanny\testcanny\testcanny.cpp(62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+d:\visual studio 2010\testcanny\testcanny\testcanny.cpp(63): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+d:\visual studio 2010\testcanny\testcanny\testcanny.cpp(64): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+  testCanny.vcxproj -> D:\visual studio 2010\testCanny\x64\Debug\testCanny.exe
+  testCanny.vcxproj -> D:\visual studio 2010\testCanny\x64\Debug\testCanny.pdb (Full PDB)
