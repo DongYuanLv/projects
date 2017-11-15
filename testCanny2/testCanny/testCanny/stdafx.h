@@ -14,23 +14,24 @@
 
 // TODO:  在此处引用程序需要的其他头文件
 #include <iostream>
+#include <opencv2/core/version.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/imgcodecs.hpp>
 
-#define VERSION_ID CVAUX_STR(CV_VERSION_MAJOR) CVAUX_STR(CV_VERSION_MINOR) CVAUX_STR(CV_VERSION_REVISION)
-
-#ifdef _DEBUG
-#define cvLib(name) "opencv_" name VERSION_ID "d"
-#else
-#define cvLib(name) "opencv_" name VERSION_ID
-#endif
-
-#pragma comment(lib, cvLib("core"))
-#pragma comment(lib, cvLib("highgui"))
-#pragma comment(lib, cvLib("imgproc"))
-#pragma comment(lib, cvLib("imgcodecs"))
+//#define VERSION_ID CVAUX_STR(CV_VERSION_MAJOR) CVAUX_STR(CV_VERSION_MINOR) CVAUX_STR(CV_VERSION_REVISION)
+//
+//#ifdef _DEBUG
+//#define cvLib(name) "opencv_" name VERSION_ID "d"
+//#else
+//#define cvLib(name) "opencv_" name VERSION_ID
+//#endif
+//
+//#pragma comment(lib, cvLib("core"))
+//#pragma comment(lib, cvLib("highgui"))
+//#pragma comment(lib, cvLib("imgproc"))
+//#pragma comment(lib, cvLib("imgcodecs"))
 
 using namespace std;
 using namespace cv;

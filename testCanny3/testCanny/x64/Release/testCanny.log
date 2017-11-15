@@ -1,0 +1,11 @@
+﻿  testCanny.cpp
+testCanny.cpp(56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+testCanny.cpp(57): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+testCanny.cpp(58): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+  正在生成代码
+  5 of 89 functions ( 5.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  testCanny.vcxproj -> D:\visual studio 2010\testCanny\x64\Release\testCanny.exe
+  testCanny.vcxproj -> D:\visual studio 2010\testCanny\x64\Release\testCanny.pdb (Full PDB)

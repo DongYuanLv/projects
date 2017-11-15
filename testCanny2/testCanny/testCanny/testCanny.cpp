@@ -12,7 +12,7 @@ void DrawCircle(const Mat & src, Mat & dst, Point center);
 
 int main()
 {
-	Mat matSrc = imread("bird.jpg", IMREAD_UNCHANGED);
+	Mat matSrc = imread("timg.jpg", IMREAD_UNCHANGED);
 	Mat matresizeSrc, matSrcgray;
 	Mat matDst1 = matSrc.clone();
 	Mat matDst4 = matSrc.clone();
@@ -32,34 +32,40 @@ int main()
 
 	bold (matDst1, matDst2);
 
-//	addpictuer(matSrc, 1, matDst2, 1.0, matDst3);
+	addpictuer(matSrc, 1, matDst2, 1.0, matDst3);
 
 //	DrawCircle(matDst3, matDst4, Point(matDst3.cols / 2, matDst3.rows / 2));
 
-	Mat mask(matSrc.rows, matSrc.cols, matSrc.type(),Scalar(255,255,255));
+//	Mat mask(matSrc.rows, matSrc.cols, matSrc.type(),Scalar(255,255,255));
 
-	circle(mask, Point(matDst2.cols / 2, matDst2.rows / 2), mask.cols / 32, Scalar(255,0,0), 6, 8);
+//	circle(mask, Point(matDst2.cols / 2, matDst2.rows / 2), mask.cols / 32, Scalar(255,0,0), 6, 8);
 
-	mask.copyTo(matDst4, matDst2);
+//	mask.copyTo(matDst4, matDst2);
+	resize(matSrc, matSrc, Size(matSrc.cols / 2.0f, matSrc.rows / 2.0f), (0, 0), (0, 0), 3);
 
-	resize(matDst4, matDst4, Size(matDst4.cols / 4.0f, matDst4.rows / 4.0f),(0,0),(0,0),3);//感觉图片缩放之后明显边缘化效果不如以前
+	resize(matDst3, matDst3, Size(matDst3.cols / 2.0f, matDst3.rows / 2.0f),(0,0),(0,0),3);//感觉图片缩放之后明显边缘化效果不如以前
 
-	namedWindow("bird1");
+	namedWindow("timg");
+	namedWindow("timg1");
 
-	moveWindow("bird1", 0, 0);
+	moveWindow("timg", 0, 0);
+	moveWindow("timg1", matDst3.cols, 0);
 
 	//cout << dStartTime<< endl;
 
-	imshow("bird1", matDst4);
+	imshow("timg", matSrc);
+	imshow("timg1", matDst3);
 
 	waitKey(-1);
 	/*system("pause");*/
     return 0;
 }
-//--------------------------------融合函数----------------------------------
+//--------
+------------------------融合函数----------------------------------
 
 void addpictuer(Mat & src1, double alpha, Mat & src2, double beta, Mat &dst)
-{   
+{
+	{   
 	if ((src1.empty())&&(src2.empty()))
 	{
 		exit(-1);
